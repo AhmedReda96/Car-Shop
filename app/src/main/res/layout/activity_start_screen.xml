@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/background"
+        tools:context=".start.StartScreen">
+
+
+        <LinearLayout
+
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentTop="true"
+            android:layout_margin="@dimen/_20sdp"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="@dimen/_150sdp"
+                android:layout_height="@dimen/_100sdp"
+                android:layout_centerInParent="true"
+                android:src="@drawable/logo"
+                android:scaleType="fitCenter"
+                />
+
+            <TextView
+                android:layout_marginBottom="@dimen/_20sdp"
+
+                android:gravity="center"
+                android:fontFamily="@font/actor"
+                android:text="@string/intro"
+                android:textColor="@android:color/darker_gray"
+                android:textSize="@dimen/_15sdp"
+                android:textStyle="normal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"></TextView>
+
+
+
+            <LinearLayout
+                android:id="@+id/btnsLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:weightSum="2">
+
+
+                <Button
+                    android:id="@+id/shopBtn"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/black_btn_curves"
+                    android:fontFamily="@font/actor"
+                    android:padding="@dimen/_5sdp"
+                    android:text="@string/shop"
+                    android:textAllCaps="false"
+                    android:textColor="@android:color/white"
+                    android:textSize="@dimen/_18sdp"
+                    android:textStyle="bold">
+
+                </Button>
+
+                <Button
+                    android:id="@+id/userBtn"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:layout_weight="1"
+                    android:background="@drawable/black_btn_curves"
+                    android:fontFamily="@font/actor"
+                    android:padding="@dimen/_5sdp"
+                    android:text="@string/userBtnText"
+                    android:textAllCaps="false"
+                    android:textColor="@android:color/white"
+                    android:textSize="@dimen/_18sdp"
+                    android:textStyle="bold">
+
+                </Button>
+            </LinearLayout>
+        </LinearLayout>
+
+
+    </RelativeLayout>
+</layout>

@@ -1,0 +1,78 @@
+<resources>
+    <string name="app_name">Car Shop</string>
+    <string name="facebook_app_id">837575513660709</string>
+    <string name="fb_login_protocol_scheme">fb837575513660709</string>
+
+    <!-- Start Screen -->
+    <string name="marketBtnText">Admin</string>
+    <string name="userBtnText">User</string>
+    <string name="shop">Shop</string>
+    <string name="backBtn">backBtn</string>
+
+
+    <!-- Shop Sign in Screen -->
+    <string name="loginToYourAcc">Sign in to your account</string>
+    <string name="dontHaveAnAcc">Don\'t have an Account? </string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="signIn">Sign In</string>
+    <string name="signUp">Sign Up</string>
+    <string name="logo">logo</string>
+    <string name="img">img</string>
+    <string name="name">Name</string>
+    <string name="confirmPass">Confirm Password</string>
+    <string name="addShopPic">Add shop Picture</string>
+    <string name="addShopPic_purpose1">Select a clear picture for your Shop</string>
+    <string name="category">Categories</string>
+    <string name="setting">Setting</string>
+    <string name="aboutUs">About us</string>
+    <string name="logout">Logout</string>
+    <string name="noInternetConnection">No internet Connection</string>
+    <string name="retry">Retry</string>
+    <string name="emptyData_purpose1">No data can be found</string>
+    <string name="emptyData_purpose2">Click on the button blew </string>
+    <string name="emptyData_purpose3">to add a product</string>
+    <string name="addProduct">Add Product</string>
+    <string name="addProduct_purpose1">Select a clear and wide picture to appear beautifully</string>
+    <string name="productName">Product Name</string>
+    <string name="save">Save</string>
+    <string name="productDescription">Product Description</string>
+    <string name="compatibleWith">Compatible With</string>
+    <string name="mercedes">Mercedes</string>
+    <string name="bmw">BMW</string>
+    <string name="chevrolet">Chevrolet</string>
+    <string name="logan">Logan</string>
+    <string name="edit">Edit</string>
+    <string name="editProduct">Edit Product</string>
+    <string name="loading">Loading...</string>
+    <string name="emptyImage">No Image Selected!</string>
+    <string name="inValidEmail">InValid Email</string>
+    <string name="inValidName">InValid Name</string>
+    <string name="inValidPassword">InValid Password</string>
+    <string name="inValidConfirmPassword">InValid Confirm Password</string>
+    <string name="authFail">The email address is already in use by another account</string>
+    <string name="failGetDataFromDatabase">there is an problem please try again</string>
+    <string name="drawer_open">Open</string>
+    <string name="drawer_close">Close</string>
+    <string name="invalidCarsList">"Please choice a compatible car"</string>
+    <string name="errorDelete">Error Deleting Product please try again!</string>
+    <string name="shopName">Shop Name</string>
+    <string name="intro">Car Shop help you to easy get sapre parts of your car</string>
+    <string name="or">___ OR ___</string>
+    <string name="socialSignin">Social Sign in with:</string>
+    <string name="phone">Phone</string>
+    <string name="addYourPic">Add your picture</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="search">Search</string>
+    <string name="cart">Cart</string>
+    <string name="cat">Category</string>
+    <string name="productPrice">Product Price</string>
+    <string name="le">L.E</string>
+    <string name="invalidPrice">Invalid price</string>
+    <string name="addToCart">Add to cart</string>
+    <string name="addProductToCart_purpose1">You can add item to cart from (Add Button) to checkout</string>
+
+
+</resources>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#EEF9FB</color>
+    <color name="colorPrimaryDark">#EEF9FB</color>
+    <color name="colorAccent">#000000</color>
+    <color name="splashBg">#fff</color>
+    <color name="whiteDark">#fff</color>
+
+    <color name="mainColor">#A7C8D1</color>
+    <color name="etBg">#edf0f7</color>
+    <color name="etTextColor">#333333</color>
+    <color name="grayBg">#88F0F2F5</color>
+
+    <color name="loginBtn">#7BE7F3</color>
+    <color name="productPrice">#FC4F48</color>
+    <color name="bookDetails1">#43494C</color>
+
+</resources>

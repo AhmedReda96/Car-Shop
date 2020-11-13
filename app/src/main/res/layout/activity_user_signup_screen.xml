@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/white"
+        tools:context=".user.ui.login.signup.UserSignUpScreen">
+
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <FrameLayout
+                    android:id="@+id/bar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/_3sdp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+
+                    <ImageButton
+                        android:id="@+id/backBtn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_margin="@dimen/_5sdp"
+                        android:background="@android:color/transparent"
+                        android:contentDescription="@string/backBtn"
+                        android:src="@mipmap/back_btn" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:fontFamily="sans-serif"
+                        android:text="@string/signUp"
+                        android:textColor="@android:color/black"
+                        android:textSize="@dimen/_20sdp"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:layout_width="@dimen/_40sdp"
+                        android:layout_height="@dimen/_40sdp"
+                        android:layout_gravity="right|center_vertical"
+                        android:layout_margin="@dimen/_5sdp"
+                        android:contentDescription="@string/logo"
+                        android:scaleType="fitCenter"
+                        android:src="@mipmap/logo_round" />
+
+
+                </FrameLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingStart="@dimen/_15sdp"
+                    android:paddingEnd="@dimen/_15sdp">
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/_15sdp"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_250sdp"
+                            android:layout_marginStart="@dimen/_10sdp"
+                            android:layout_marginEnd="@dimen/_10sdp"
+                            android:contentDescription="@string/logo"
+                            android:scaleType="fitCenter"
+                            app:srcCompat="@drawable/user_icon"
+                            tools:ignore="VectorDrawableCompat"
+                            tools:srcCompat="@drawable/user_icon">
+
+                        </ImageView>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center|top"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="@dimen/_5sdp"
+                                android:fontFamily="sans-serif"
+                                android:text="@string/addYourPic"
+                                android:textColor="@android:color/black"
+                                android:textSize="@dimen/_20sdp"
+                                android:textStyle="bold" />
+
+                            <TextView
+
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="sans-serif"
+                                android:text="@string/addShopPic_purpose1"
+                                android:textColor="@android:color/darker_gray"
+                                android:textSize="@dimen/_10sdp" />
+
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_gravity="center"
+                        android:layout_width="@dimen/_150sdp"
+                        android:layout_height="@dimen/_150sdp"
+                        android:layout_marginBottom="@dimen/_15sdp"
+                        android:elevation="@dimen/_100sdp"
+                        android:focusable="true"
+                        android:foreground="?android:attr/selectableItemBackground"
+                        app:cardCornerRadius="@dimen/_4sdp">
+
+
+                        <ImageView
+                            android:id="@+id/userImg"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@android:color/transparent"
+                            android:contentDescription="@string/img"
+                            android:padding="@dimen/_20sdp"
+                            android:src="@drawable/ic_add_a_photo_black_24dp" />
+
+                    </androidx.cardview.widget.CardView>
+
+                    <TextView
+                        android:id="@+id/errorTv"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_15sdp"
+                        android:layout_marginEnd="@dimen/_15sdp"
+                        android:layout_marginBottom="@dimen/_10sdp"
+                        android:fontFamily="sans-serif"
+                        android:gravity="center"
+                        android:text=""
+                        android:textColor="@android:color/holo_red_light"
+                        android:textSize="@dimen/_10sdp" />
+
+
+                    <LinearLayout
+
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+
+                        <EditText
+                            android:id="@+id/nameET"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="@dimen/_15sdp"
+                            android:autofillHints="@string/name"
+                            android:background="@drawable/et_curves_gray_bg"
+                            android:hint="@string/name"
+                            android:inputType="text"
+                            android:maxEms="30"
+                            android:maxLength="30"
+                            android:padding="@dimen/_10sdp"
+                            android:singleLine="true"
+                            android:text=""
+                            android:textColor="@color/etTextColor"
+                            android:textSize="@dimen/_14sdp" />
+
+                        <EditText
+
+                            android:id="@+id/emailET"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="@dimen/_15sdp"
+                            android:autofillHints="@string/email"
+                            android:background="@drawable/et_curves_gray_bg"
+                            android:hint="@string/email"
+                            android:inputType="textEmailAddress"
+                            android:padding="@dimen/_10sdp"
+                            android:singleLine="true"
+                            android:text=""
+                            android:textColor="@color/etTextColor"
+                            android:textSize="@dimen/_14sdp" />
+
+                        <EditText
+                            android:id="@+id/passwordET"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="@dimen/_20sdp"
+                            android:autofillHints="@string/password"
+                            android:background="@drawable/et_curves_gray_bg"
+                            android:hint="@string/password"
+                            android:inputType="textPassword"
+                            android:padding="@dimen/_10sdp"
+                            android:singleLine="true"
+                            android:text=""
+                            android:textColor="@color/etTextColor"
+                            android:textSize="@dimen/_14sdp" />
+
+
+                        <EditText
+                            android:id="@+id/confirmPasswordET"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="@dimen/_20sdp"
+                            android:autofillHints="@string/confirmPass"
+                            android:background="@drawable/et_curves_gray_bg"
+                            android:hint="@string/confirmPass"
+                            android:inputType="textPassword"
+                            android:padding="@dimen/_10sdp"
+                            android:singleLine="true"
+                            android:text=""
+                            android:textColor="@color/etTextColor"
+                            android:textSize="@dimen/_14sdp" />
+
+                        <Button
+                            android:id="@+id/signUpBtn"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="@dimen/_10sdp"
+                            android:background="@drawable/btn_curves_blue_bg"
+                            android:contentDescription="@string/signUp"
+                            android:padding="@dimen/_7sdp"
+                            android:text="@string/signUp"
+                            android:textAllCaps="false"
+                            android:textColor="@android:color/white"
+                            android:textSize="@dimen/_16sdp"
+                            android:textStyle="bold" />
+
+
+                        <LinearLayout
+                            android:id="@+id/signUpLin"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentBottom="true"
+                            android:layout_centerHorizontal="true"
+                            android:layout_gravity="center"
+                            android:layout_margin="@dimen/_10sdp"
+                            android:orientation="horizontal">
+
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+        </androidx.core.widget.NestedScrollView>
+
+    </RelativeLayout>
+</layout>

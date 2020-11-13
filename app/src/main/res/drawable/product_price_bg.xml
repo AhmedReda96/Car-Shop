@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ripple xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:color="@android:color/white"
+    tools:targetApi="O">
+    <item>
+        <shape>
+            <stroke
+                android:width="2dp"
+                android:color="#32383b" />
+            <corners
+                android:bottomLeftRadius="0dp"
+                android:bottomRightRadius="0dp"
+                android:topLeftRadius="10dp"
+                android:topRightRadius="0dp"
+                />
+            <padding
+                android:bottom="2dp"
+                android:left="2dp"
+                android:right="2dp"
+                android:top="2dp" />
+            <solid android:color="#343a3d" />
+        </shape>
+
+    </item>
+
+
+</ripple>
+
