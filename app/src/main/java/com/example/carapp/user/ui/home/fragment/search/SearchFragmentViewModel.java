@@ -80,4 +80,11 @@ public class SearchFragmentViewModel extends ViewModel {
 
 
     }
+
+    public void test1() {
+
+
+
+
+    }
 }

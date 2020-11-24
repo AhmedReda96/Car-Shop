@@ -2,6 +2,7 @@ package com.example.carapp.user.ui.home.fragment.setting;
 
 import androidx.lifecycle.ViewModelProviders;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -12,11 +13,20 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.bumptech.glide.Glide;
 import com.example.carapp.R;
+import com.example.carapp.Sessions.sp.TestLogin;
+import com.example.carapp.Sessions.sp.UserData;
+import com.example.carapp.databinding.SearchFragmentScreenBinding;
+import com.example.carapp.databinding.SettingFragmentScreenBinding;
+import com.example.carapp.start.StartScreen;
+import com.google.firebase.auth.FirebaseAuth;
 
 public class SettingFragmentScreen extends Fragment {
-
+    private SettingFragmentScreenBinding binding;
     private SettingFragmentViewModel mViewModel;
+    private UserData userData;
+    private TestLogin testLogin;
 
     public static SettingFragmentScreen newInstance() {
         return new SettingFragmentScreen();
@@ -25,37 +35,47 @@ public class SettingFragmentScreen extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.setting_fragment_screen, container, false);
+        binding = SettingFragmentScreenBinding.inflate(inflater, container, false);
+        binding.setLifecycleOwner(getActivity());
+        return binding.getRoot();
     }
 
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        mViewModel = ViewModelProviders.of(this).get(SettingFragmentViewModel.class);
-        // TODO: Use the ViewModel
+        init();
     }
 
+    private void init() {
+        mViewModel = ViewModelProviders.of(this).get(SettingFragmentViewModel.class);
+        userData = new UserData(getActivity());
+        testLogin = new TestLogin(getActivity());
 
-       /*   UserData userData = new UserData(this);
-        binding.name.setText(userData.getName());
-        binding.email.setText(userData.getEmail());
+        setData();
+    }
 
-        TestLogin testLogin = new TestLogin(this);
+    private void setData() {
 
-        Glide.with(this).load(userData.getImage()).into(binding.img);
+
+        binding.userName.setText(userData.getName());
+        binding.userEmail.setText(userData.getEmail());
+
+        Glide.with(this).load(userData.getImage()).into(binding.userImg);
 
 
         binding.logoutBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 FirebaseAuth.getInstance().signOut();
-                LoginManager.getInstance().logOut();
                 testLogin.remove();
                 userData.remove();
-                startActivity(new Intent(UserHomeScreen.this, StartScreen.class));
-                finish();
+                startActivity(new Intent(getActivity(), StartScreen.class));
+                getActivity().finish();
             }
         });
 
-      */
+
+    }
+
+
 }

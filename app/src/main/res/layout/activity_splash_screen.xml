@@ -16,19 +16,5 @@
         android:src="@drawable/logo"
         android:scaleType="fitCenter"
         />
-<TextView
-    android:textStyle="bold"
-    android:padding="@dimen/_5sdp"
-    android:layout_below="@+id/img"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_centerHorizontal="true"
-    android:text="@string/app_name"
-    android:textSize="@dimen/_25sdp"
-    android:fontFamily="@font/actor"
-    android:textColor="@android:color/black"/>
-
-
-
 
 </RelativeLayout>

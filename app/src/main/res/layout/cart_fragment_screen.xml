@@ -11,6 +11,7 @@
         android:layout_height="match_parent"
         tools:context=".user.ui.home.fragment.cart.CartFragmentScreen">
 
+
         <androidx.recyclerview.widget.RecyclerView
             android:layout_above="@+id/checkoutBtn"
             android:id="@+id/cartRV"
