@@ -104,7 +104,9 @@ public class ShopFragmentViewModel extends ViewModel {
         progressDialog.show();
         isInternetPresent = cd.isConnectingToInternet();
         if (!isInternetPresent) {
-            getProductsListFromRoom();
+        //    getProductsListFromRoom();
+            checkMutableLiveData.setValue("noInternetConnection");
+            progressDialog.dismiss();
             Log.d("TAG", "carShop  checkInternet:  !isInternetPresent");
 
         } else {
@@ -176,6 +178,7 @@ public class ShopFragmentViewModel extends ViewModel {
 
                 productsMutableLiveData.setValue(productEntitiesList);
 
+                checkMutableLiveData.setValue("Products");
 
 
             }

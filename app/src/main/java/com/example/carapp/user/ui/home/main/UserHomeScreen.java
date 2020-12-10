@@ -3,9 +3,12 @@ package com.example.carapp.user.ui.home.main;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 
 import com.bumptech.glide.Glide;
@@ -20,6 +23,8 @@ import com.google.android.material.badge.BadgeDrawable;
 import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.tabs.TabLayoutMediator;
 import com.google.firebase.auth.FirebaseAuth;
+
+import java.util.List;
 
 public class UserHomeScreen extends AppCompatActivity {
     private ActivityUserHomeScreenBinding binding;
@@ -40,7 +45,6 @@ public class UserHomeScreen extends AppCompatActivity {
         binding = DataBindingUtil.setContentView(this, R.layout.activity_user_home_screen);
         binding.setLifecycleOwner(this);
         binding.viewPager.setAdapter(new SectionPagerAdapter(this));
-
         tabLayoutMediator = new TabLayoutMediator(binding.tab, binding.viewPager, new TabLayoutMediator.TabConfigurationStrategy() {
             @Override
             public void onConfigureTab(@NonNull TabLayout.Tab tab, int position) {
@@ -67,5 +71,14 @@ public class UserHomeScreen extends AppCompatActivity {
         });
 
         tabLayoutMediator.attach();
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        for (Fragment fragment : getSupportFragmentManager().getFragments()) {
+            fragment.onActivityResult(requestCode, resultCode, data);
+        }
     }
 }

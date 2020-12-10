@@ -40,7 +40,7 @@ public interface ProductDao {
     @Query("update productTable SET name = :namee,cars = :cars,price = :pricee  WHERE productId LIKE :productIdd")
     Completable updateProductWithoutImage(String productIdd, String namee, String cars, String pricee);
 
-    @Query("SELECT * FROM ProductTable WHERE name LIKE '%' || :value  || '%'")
+    @Query("SELECT * FROM ProductTable WHERE name LIKE '%'||:value ||'%'")
     Observable<List<ProductEntity>> searchProduct(String value);
 
     //cart Part
@@ -53,6 +53,11 @@ public interface ProductDao {
     @Query("delete From cartTable")
     Completable deleteCartData();
 
-    @Query("SELECT *  From cartTable ")
+    @Query("SELECT *  From cartTable")
     Observable<List<CartEntity>> getCartData();
+
+
+    @Query("SELECT *  From productTable WHERE categoryName=:categoryName ")
+    Observable<List<ProductEntity>> getProductDataFromCamera(String categoryName);
+
 }

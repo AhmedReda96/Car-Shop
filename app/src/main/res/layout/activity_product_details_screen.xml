@@ -36,43 +36,9 @@
                     android:layout_marginBottom="@dimen/_15sdp"
                     android:orientation="vertical">
 
-                    <ImageView
-                        android:layout_width="match_parent"
-                        android:layout_height="@dimen/_150sdp"
-                        android:layout_marginStart="@dimen/_30sdp"
-                        android:layout_marginEnd="@dimen/_30sdp"
-                        android:contentDescription="@string/logo"
-                        android:scaleType="fitCenter"
-                        android:src="@drawable/cart">
-
-                    </ImageView>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:gravity="center|top"
-                        android:orientation="vertical">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:fontFamily="sans-serif"
-                            android:text="@string/addToCart"
-                            android:textColor="@android:color/black"
-                            android:textSize="@dimen/_20sdp"
-                            android:textStyle="bold" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:fontFamily="sans-serif"
-                            android:text="@string/addProductToCart_purpose1"
-                            android:textColor="@android:color/darker_gray"
-                            android:textSize="@dimen/_10sdp" />
 
 
-                    </LinearLayout>
+
                 </LinearLayout>
                 <RelativeLayout
                     android:layout_width="match_parent"

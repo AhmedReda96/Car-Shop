@@ -2,55 +2,41 @@ package com.example.carapp.user.ui.home.fragment.search;
 
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
-
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
-
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
-
+import android.provider.MediaStore;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
+import android.widget.Toast;
 
-import com.bumptech.glide.Glide;
-import com.example.carapp.R;
+import com.example.carapp.Sessions.internetcheck.ConnectionDetector;
 import com.example.carapp.databinding.SearchFragmentScreenBinding;
 import com.example.carapp.db.ProductEntity;
 import com.example.carapp.user.helper.UserSearchAdapter;
-import com.example.carapp.user.ui.login.signup.UserSignUpScreen;
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.firebase.ml.vision.FirebaseVision;
-import com.google.firebase.ml.vision.common.FirebaseVisionImage;
-import com.google.firebase.ml.vision.label.FirebaseVisionImageLabel;
-import com.google.firebase.ml.vision.label.FirebaseVisionImageLabeler;
-import com.google.mlkit.vision.label.ImageLabeler;
-import com.google.mlkit.vision.label.ImageLabeling;
-import com.google.mlkit.vision.label.defaults.ImageLabelerOptions;
 import com.theartofdev.edmodo.cropper.CropImage;
 import com.theartofdev.edmodo.cropper.CropImageView;
-
-import java.io.IOException;
 import java.util.Collections;
 import java.util.List;
-
 import static android.app.Activity.RESULT_OK;
-import static com.facebook.FacebookSdk.getApplicationContext;
 
 public class SearchFragmentScreen extends Fragment implements View.OnClickListener {
     private SearchFragmentScreenBinding binding;
     private SearchFragmentViewModel viewModel;
     private UserSearchAdapter adapter;
     private Uri imageUri = null;
-
+    private Bitmap bitmap;
+    private ConnectionDetector cd;
+    private Boolean isInternetPresent = false;
     public static SearchFragmentScreen newInstance() {
         return new SearchFragmentScreen();
     }
@@ -90,13 +76,12 @@ public class SearchFragmentScreen extends Fragment implements View.OnClickListen
     }
 
     private void init() {
-
         viewModel = ViewModelProviders.of(this).get(SearchFragmentViewModel.class);
         binding.cameraBtn.setOnClickListener(this);
 
         binding.ivClearText.setOnClickListener(this);
         viewModel.init(getActivity());
-
+        cd = new ConnectionDetector(getActivity());
         binding.edtSearchText.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
@@ -140,10 +125,55 @@ public class SearchFragmentScreen extends Fragment implements View.OnClickListen
 
         }
         if (binding.cameraBtn.equals(v)) {
+            isInternetPresent = cd.isConnectingToInternet();
+            if (!isInternetPresent) {
+                Log.d("TAG", "carShop  checkInternet:  !isInternetPresent");
+                Toast.makeText(getActivity(),"no internet!",Toast.LENGTH_LONG).show();
+            } else {
+                Log.d("TAG", "carShop  checkInternet: isInternetPresent");
+                CropImage.activity().setGuidelines(CropImageView.Guidelines.ON).start(getActivity());
 
-            //TODO Emaaaaaaaaaad write code here
+            }
+
         }
     }
 
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
 
+        try {
+
+            if (requestCode == CropImage.CROP_IMAGE_ACTIVITY_REQUEST_CODE) {
+                Log.d("TAG", "onActivityResult Fragment 1: ");
+
+                CropImage.ActivityResult result = CropImage.getActivityResult(data);
+                imageUri = result.getUri();
+
+                if (resultCode == RESULT_OK) {
+
+
+                    bitmap = MediaStore.Images.Media.getBitmap(getActivity().getContentResolver(), imageUri);
+
+                    viewModel.getCameraImageResult(bitmap);
+
+
+                } else if (resultCode == CropImage.CROP_IMAGE_ACTIVITY_RESULT_ERROR_CODE) {
+
+                    Exception error = result.getError();
+                    error.printStackTrace();
+                    Log.d("TAG", "onActivityResult Fragment:  "+error.getMessage());
+
+
+                }
+            }
+
+
+        } catch (Exception e) {
+
+            e.printStackTrace();
+        }
+
+
+    }
 }

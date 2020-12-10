@@ -101,13 +101,14 @@ public class ShopFragmentScreen extends Fragment implements View.OnClickListener
                         break;
                     case "noProducts":
                         binding.showDataLin.setVisibility(View.GONE);
-
                         binding.connectionLin.setVisibility(View.GONE);
                         binding.emptyDataLin.setVisibility(View.VISIBLE);
                         break;
 
-                    case "invalidCarsList":
-
+                    case "Products":
+                        binding.showDataLin.setVisibility(View.VISIBLE);
+                        binding.connectionLin.setVisibility(View.GONE);
+                        binding.emptyDataLin.setVisibility(View.GONE);
                         break;
                 }
             }
@@ -119,7 +120,7 @@ public class ShopFragmentScreen extends Fragment implements View.OnClickListener
     @Override
     public void onClick(View v) {
         if (binding.retryBtn.equals(v)) {
-          //  viewModel.checkInternet();
+            viewModel.checkInternet();
 
         }
     }
