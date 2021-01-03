@@ -9,9 +9,9 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.bumptech.glide.Glide;
+
 import com.example.carapp.R;
 import com.example.carapp.databinding.ActivityProductDetailsScreenBinding;
-import com.example.carapp.user.ui.login.signin.UserSignInViewModel;
 
 public class ProductDetailsScreen extends AppCompatActivity implements View.OnClickListener {
     private ActivityProductDetailsScreenBinding binding;

@@ -20,6 +20,7 @@ import com.bumptech.glide.load.engine.GlideException;
 import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions;
 import com.bumptech.glide.request.RequestListener;
 import com.bumptech.glide.request.target.Target;
+
 import com.example.carapp.R;
 import com.example.carapp.Sessions.sp.TestLogin;
 import com.example.carapp.databinding.ProductItemModelBinding;
@@ -81,7 +82,7 @@ public class ProductsAdapter extends RecyclerView.Adapter<ProductsAdapter.ViewHo
 
 
         Log.d("TAG", "carShop ShopProductList : " + cars);
-        binding.compatibleWith.setText(model.getCars());
+        holder.binding.compatibleWith.setText(model.getCars());
         holder.binding.getRoot().setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

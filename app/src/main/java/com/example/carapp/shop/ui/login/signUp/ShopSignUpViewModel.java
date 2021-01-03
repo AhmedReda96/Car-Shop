@@ -138,6 +138,8 @@ public class ShopSignUpViewModel extends ViewModel {
                         Log.d("TAG", "carShop ShopSignUp  uri= " + uri.toString());
                         map.put("image", imageUrl);
                         map.put("name", name);
+                        map.put("name", name);
+
                         map.put("id", shopID);
                         map.put("adminToken", FirebaseInstanceId.getInstance().getToken());
                         shopName = name;

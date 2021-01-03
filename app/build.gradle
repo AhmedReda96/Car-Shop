@@ -31,8 +31,8 @@ android {
     aaptOptions {
         noCompress "tflite"
     }
-}
 
+}
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])

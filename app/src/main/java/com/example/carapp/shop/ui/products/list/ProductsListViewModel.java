@@ -14,6 +14,7 @@ import com.example.carapp.Sessions.sp.ShopData;
 import com.example.carapp.db.MainDataBase;
 import com.example.carapp.db.ProductDao;
 import com.example.carapp.db.ProductEntity;
+
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -42,7 +43,7 @@ public class ProductsListViewModel extends ViewModel {
     private DatabaseReference databaseReference;
     private ProductEntity productEntity;
     private String categoryName;
-    private String carsListStore ;
+    private String carsListStore;
 
     private List<ProductEntity> productEntityList = new ArrayList<>();
 
@@ -95,7 +96,6 @@ public class ProductsListViewModel extends ViewModel {
                     }
                 });
 
-
     }
 
     private void checkInternet() {
@@ -139,32 +139,33 @@ public class ProductsListViewModel extends ViewModel {
     }
 
     private void getShopProducts() {
+        progressDialog.dismiss();
         shopData = new ShopData(context);
         databaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
-
+                    carsListStore = null;
                     if (snapshot.child("shopID").getValue().toString().equals(shopData.getId())) {
                         if (snapshot.child("categoryName").getValue().toString().equals(categoryName)) {
                             String id = snapshot.getKey();
                             String name = snapshot.child("name").getValue().toString();
                             String image = snapshot.child("image").getValue().toString();
                             String shopName = snapshot.child("shopName").getValue().toString();
+                            String price = snapshot.child("price").getValue().toString();
 
                             for (DataSnapshot carSnapshot : snapshot.child("cars").getChildren()) {
-                                if (carsListStore==null){
-                                    carsListStore=carSnapshot.getValue().toString();
+                                if (carsListStore == null) {
+                                    carsListStore = carSnapshot.getValue().toString();
 
-                                }
-                                else {
-                                    carsListStore=carsListStore+","+ carSnapshot.getValue().toString();
+                                } else {
+                                    carsListStore = carsListStore + "," + carSnapshot.getValue().toString();
 
                                 }
 
                             }
                             //TODO edit
-                            productEntity = new ProductEntity(id, categoryName, shopData.getId(), image, name, carsListStore,shopName,"10");
+                            productEntity = new ProductEntity(id, categoryName, shopData.getId(), image, name, carsListStore, shopName, price);
                             productEntitiesList.add(productEntity);
 
                         } else {
@@ -174,38 +175,39 @@ public class ProductsListViewModel extends ViewModel {
                     }
 
                 }
-                    if (productEntitiesList.size() <= 0) {
-                        Log.d("TAG", "carShop ShopProductList: " + productEntitiesList.size());
-                        progressDialog.dismiss();
-                        checkMutableLiveData.setValue("noProducts");
-                    } else {
-                        Log.d("TAG", "carShop ShopProductList: " + productEntitiesList.size());
-                        productDao.insertProductList(productEntitiesList).subscribeOn(Schedulers.io())
-                                .observeOn(AndroidSchedulers.mainThread())
-                                .subscribe(new CompletableObserver() {
-                                    @Override
-                                    public void onSubscribe(Disposable d) {
+                if (productEntitiesList.size() <= 0) {
+                    Log.d("TAG", "carShop ShopProductList: " + productEntitiesList.size());
+                    progressDialog.dismiss();
+                    checkMutableLiveData.setValue("noProducts");
+                } else {
+                    Log.d("TAG", "carShop ShopProductList: " + productEntitiesList.size());
+                    productDao.insertProductList(productEntitiesList).subscribeOn(Schedulers.io())
+                            .observeOn(AndroidSchedulers.mainThread())
+                            .subscribe(new CompletableObserver() {
+                                @Override
+                                public void onSubscribe(Disposable d) {
 
-                                    }
+                                }
 
-                                    @Override
-                                    public void onComplete() {
-                                        Log.d("TAG", "carShop ShopProductList onComplete: add data to productTable successfully");
+                                @Override
+                                public void onComplete() {
+                                    Log.d("TAG", "carShop ShopProductList onComplete: add data to productTable successfully");
 
-                                        checkMutableLiveData.setValue("showDataFromRoom");
+                                    checkMutableLiveData.setValue("showDataFromRoom");
+                                    progressDialog.dismiss();
 
-                                    }
+                                }
 
-                                    @Override
-                                    public void onError(Throwable e) {
-                                        Log.d("TAG", "carShop onError: add data to productTable error");
+                                @Override
+                                public void onError(Throwable e) {
+                                    Log.d("TAG", "carShop onError: add data to productTable error");
 
-                                    }
-                                });
-
-                    }
+                                }
+                            });
 
                 }
+
+            }
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
@@ -213,7 +215,7 @@ public class ProductsListViewModel extends ViewModel {
             }
         });
 
-        }
+    }
 
 
 }

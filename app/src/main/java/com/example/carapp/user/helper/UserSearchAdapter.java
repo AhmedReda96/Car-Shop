@@ -8,12 +8,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.databinding.DataBindingUtil;
 import androidx.recyclerview.widget.RecyclerView;
-
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.DataSource;
 import com.bumptech.glide.load.engine.GlideException;
@@ -23,7 +21,6 @@ import com.bumptech.glide.request.target.Target;
 import com.example.carapp.R;
 import com.example.carapp.Sessions.sp.TestLogin;
 import com.example.carapp.databinding.SearchProductItemModelBinding;
-import com.example.carapp.databinding.UserProductItemModelBinding;
 import com.example.carapp.db.ProductEntity;
 import com.example.carapp.user.ui.productDetails.ProductDetailsScreen;
 

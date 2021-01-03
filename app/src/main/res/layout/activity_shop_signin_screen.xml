@@ -12,9 +12,17 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@drawable/background"
-        tools:context=".shop.ui.login.signIn.ShopSignInScreen">
+        tools:context="com.example.carapp.group.alpha.carapp.shop.ui.login.signIn.ShopSignInScreen">
 
 
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+
+
+        </androidx.core.widget.NestedScrollView>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -67,6 +75,7 @@
                         android:contentDescription="@string/logo"
                         android:scaleType="fitCenter"
                         android:src="@mipmap/logo_round" />
+
 
 
                 </FrameLayout>

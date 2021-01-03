@@ -13,14 +13,14 @@ import android.widget.CompoundButton;
 import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
-import com.example.carapp.R;
-import com.example.carapp.databinding.ActivityAddProductScreenBinding;
-import com.example.carapp.shop.ui.products.list.ProductsListScreen;
 import com.theartofdev.edmodo.cropper.CropImage;
 import com.theartofdev.edmodo.cropper.CropImageView;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import com.example.carapp.R;
+import com.example.carapp.databinding.ActivityAddProductScreenBinding;
 
 public class AddProductScreen extends AppCompatActivity implements View.OnClickListener {
     private ActivityAddProductScreenBinding binding;
@@ -31,7 +31,6 @@ public class AddProductScreen extends AppCompatActivity implements View.OnClickL
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_add_product_screen);
 
         init();
     }

@@ -100,6 +100,7 @@ public class ProductsListScreen extends AppCompatActivity implements View.OnClic
                 Collections.reverse(productEntityList);
                 adapter.notifyDataSetChanged();
                 binding.ProductRV.setAdapter(adapter);
+
             }
         });
 

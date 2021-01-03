@@ -45,7 +45,7 @@
     <string name="logan">Logan</string>
     <string name="edit">Edit</string>
     <string name="editProduct">Edit Product</string>
-    <string name="loading">Loading...</string>
+    <string name="loading">Loading…</string>
     <string name="emptyImage">No Image Selected!</string>
     <string name="inValidEmail">InValid Email</string>
     <string name="inValidName">InValid Name</string>

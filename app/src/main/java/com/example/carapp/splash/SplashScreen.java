@@ -1,15 +1,12 @@
 package com.example.carapp.splash;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.content.ContextCompat;
 
 import android.os.Bundle;
 import android.os.Handler;
-import android.view.Window;
-import android.view.WindowManager;
+
 
 import com.example.carapp.R;
-import com.example.carapp.start.StartScreen;
 
 public class SplashScreen extends AppCompatActivity {
     private int backFlag = 0;

@@ -6,20 +6,26 @@ import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
 import android.content.Intent;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
+import android.content.pm.Signature;
 import android.os.Bundle;
+import android.util.Base64;
 import android.util.Log;
 import android.view.View;
 
+import com.example.carapp.R;
 import com.example.carapp.databinding.ActivityUserSigninScreenBinding;
-import com.example.carapp.shop.ui.login.signIn.ShopSignInScreen;
 import com.example.carapp.user.ui.login.signup.UserSignUpScreen;
 import com.facebook.CallbackManager;
 import com.facebook.FacebookSdk;
-import com.example.carapp.R;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.common.api.ApiException;
 import com.google.android.gms.tasks.Task;
+
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 
 public class UserSignInScreen extends AppCompatActivity implements View.OnClickListener {
     private CallbackManager callbackManager;
@@ -51,7 +57,7 @@ public class UserSignInScreen extends AppCompatActivity implements View.OnClickL
 
         viewModel.init(this);
         checkSocialLogin();
-
+        Get_hash_key();
     }
 
     private void checkSocialLogin() {
@@ -75,13 +81,34 @@ public class UserSignInScreen extends AppCompatActivity implements View.OnClickL
 
     }
 
+    public void Get_hash_key() {
+        PackageInfo info;
+        try {
+            info = getPackageManager().getPackageInfo("com.example.carapp", PackageManager.GET_SIGNATURES);
+            for (Signature signature : info.signatures) {
+                MessageDigest md;
+                md = MessageDigest.getInstance("SHA");
+                md.update(signature.toByteArray());
+                String something = new String(Base64.encode(md.digest(), 0));
+                //String something = new String(Base64.encodeBytes(md.digest()));
+                Log.d("TAG", "Get_hash_key: "+something);
+            }
+        } catch (PackageManager.NameNotFoundException e1) {
+            Log.e("name not found", e1.toString());
+        } catch (NoSuchAlgorithmException e) {
+            Log.e("no such an algorithm", e.toString());
+        } catch (Exception e) {
+            Log.e("exception", e.toString());
+        }
+    }
+
 
     @Override
     public void onClick(View v) {
         if (binding.facebookBtn.equals(v)) {
             viewModel.checkFacebookLogin(this, callbackManager);
         }
-        if (binding.signInBtn.equals(v)){
+        if (binding.signInBtn.equals(v)) {
             signInProcess();
         }
 
@@ -97,7 +124,7 @@ public class UserSignInScreen extends AppCompatActivity implements View.OnClickL
     }
 
     private void signInProcess() {
-        viewModel.checkData( binding.emailET.getText().toString().trim(), binding.passwordET.getText().toString().trim());
+        viewModel.checkData(binding.emailET.getText().toString().trim(), binding.passwordET.getText().toString().trim());
         viewModel.checkMutableLiveData.observe(this, new Observer<String>() {
             @Override
             public void onChanged(String s) {

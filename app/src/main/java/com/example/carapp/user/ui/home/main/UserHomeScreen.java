@@ -4,32 +4,24 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
-import android.view.View;
+import android.os.Handler;
 
-import com.bumptech.glide.Glide;
+
 import com.example.carapp.R;
-import com.example.carapp.Sessions.sp.TestLogin;
-import com.example.carapp.Sessions.sp.UserData;
 import com.example.carapp.databinding.ActivityUserHomeScreenBinding;
-import com.example.carapp.start.StartScreen;
 import com.example.carapp.user.helper.SectionPagerAdapter;
-import com.facebook.login.LoginManager;
-import com.google.android.material.badge.BadgeDrawable;
 import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.tabs.TabLayoutMediator;
-import com.google.firebase.auth.FirebaseAuth;
-
-import java.util.List;
 
 public class UserHomeScreen extends AppCompatActivity {
     private ActivityUserHomeScreenBinding binding;
     private SectionPagerAdapter sectionPagerAdapter;
     private TabLayoutMediator tabLayoutMediator;
+    private boolean doubleBackToExitPressedOnce = false;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -81,4 +73,23 @@ public class UserHomeScreen extends AppCompatActivity {
             fragment.onActivityResult(requestCode, resultCode, data);
         }
     }
+    @Override
+    public void onBackPressed() {
+        if (doubleBackToExitPressedOnce) {
+            super.onBackPressed();
+            this.finishAffinity();
+
+            return;
+        }
+
+        this.doubleBackToExitPressedOnce = true;
+
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                doubleBackToExitPressedOnce = false;
+            }
+        }, 2000);
+    }
+
 }

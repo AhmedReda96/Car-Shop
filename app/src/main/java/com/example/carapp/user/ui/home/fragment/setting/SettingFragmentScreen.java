@@ -14,10 +14,9 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.bumptech.glide.Glide;
-import com.example.carapp.R;
 import com.example.carapp.Sessions.sp.TestLogin;
 import com.example.carapp.Sessions.sp.UserData;
-import com.example.carapp.databinding.SearchFragmentScreenBinding;
+
 import com.example.carapp.databinding.SettingFragmentScreenBinding;
 import com.example.carapp.start.StartScreen;
 import com.google.firebase.auth.FirebaseAuth;

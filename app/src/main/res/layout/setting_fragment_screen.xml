@@ -10,7 +10,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".user.ui.home.fragment.setting.SettingFragmentScreen">
+        tools:context="com.example.carapp.group.alpha.carapp.user.ui.home.fragment.setting.SettingFragmentScreen">
 
 
         <LinearLayout

@@ -12,20 +12,18 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.CompoundButton;
 import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
-import com.example.carapp.R;
-import com.example.carapp.databinding.ActivityEditProductScreenBinding;
-import com.example.carapp.shop.ui.products.add.AddProductScreen;
-import com.example.carapp.shop.ui.products.add.AddProductViewModel;
 import com.theartofdev.edmodo.cropper.CropImage;
 import com.theartofdev.edmodo.cropper.CropImageView;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+
+import com.example.carapp.R;
+import com.example.carapp.databinding.ActivityEditProductScreenBinding;
 
 public class EditProductScreen extends AppCompatActivity implements View.OnClickListener {
 

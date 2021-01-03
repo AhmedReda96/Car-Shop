@@ -27,6 +27,7 @@ import com.theartofdev.edmodo.cropper.CropImage;
 import com.theartofdev.edmodo.cropper.CropImageView;
 import java.util.Collections;
 import java.util.List;
+
 import static android.app.Activity.RESULT_OK;
 
 public class SearchFragmentScreen extends Fragment implements View.OnClickListener {

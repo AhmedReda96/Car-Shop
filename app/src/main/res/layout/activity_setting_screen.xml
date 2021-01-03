@@ -11,7 +11,7 @@
         android:background="@android:color/white"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".shop.ui.setting.SettingScreen">
+        tools:context="com.example.carapp.group.alpha.carapp.shop.ui.setting.SettingScreen">
 
 
         <FrameLayout

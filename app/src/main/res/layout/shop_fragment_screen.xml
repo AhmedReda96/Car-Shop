@@ -10,7 +10,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".user.ui.home.fragment.shop.ShopFragmentScreen">
+        tools:context="com.example.carapp.group.alpha.carapp.user.ui.home.fragment.shop.ShopFragmentScreen">
 
         <LinearLayout
 
@@ -97,7 +97,6 @@
             android:id="@+id/showDataLin"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_below="@+id/bar"
             android:visibility="gone">
 
             <androidx.recyclerview.widget.RecyclerView

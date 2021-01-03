@@ -11,7 +11,7 @@
         android:id="@+id/mainLin"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".user.ui.home.fragment.search.SearchFragmentScreen">
+        tools:context="com.example.carapp.group.alpha.carapp.user.ui.home.fragment.search.SearchFragmentScreen">
 
         <androidx.cardview.widget.CardView
             android:id="@+id/cart"

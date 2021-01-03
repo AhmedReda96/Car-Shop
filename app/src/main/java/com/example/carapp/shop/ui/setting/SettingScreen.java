@@ -12,12 +12,11 @@ import android.view.View;
 import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
+
 import com.example.carapp.R;
 import com.example.carapp.Sessions.sp.ShopData;
 import com.example.carapp.databinding.ActivitySettingScreenBinding;
-import com.example.carapp.databinding.ActivityShopHomeScreenBinding;
-import com.example.carapp.shop.ui.products.edit.EditProductScreen;
-import com.example.carapp.shop.ui.products.edit.EditProductViewModel;
+
 import com.theartofdev.edmodo.cropper.CropImage;
 import com.theartofdev.edmodo.cropper.CropImageView;
 

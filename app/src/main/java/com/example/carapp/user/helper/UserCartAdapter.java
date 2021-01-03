@@ -1,7 +1,6 @@
 package com.example.carapp.user.helper;
 
 import android.app.AlertDialog;
-import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.graphics.drawable.Drawable;
@@ -15,8 +14,6 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.databinding.DataBindingUtil;
-import androidx.fragment.app.FragmentActivity;
-import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
@@ -25,14 +22,12 @@ import com.bumptech.glide.load.engine.GlideException;
 import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions;
 import com.bumptech.glide.request.RequestListener;
 import com.bumptech.glide.request.target.Target;
+
 import com.example.carapp.R;
-import com.example.carapp.Sessions.internetcheck.ConnectionDetector;
-import com.example.carapp.Sessions.sp.TestLogin;
 import com.example.carapp.databinding.CartProductItemModelBinding;
 import com.example.carapp.db.CartEntity;
 import com.example.carapp.db.MainDataBase;
 import com.example.carapp.db.ProductDao;
-import com.example.carapp.user.ui.home.fragment.cart.CartFragmentViewModel;
 
 import java.util.List;
 

@@ -20,54 +20,54 @@
         tools:ignore="LockedOrientationActivity"
         tools:targetApi="m">
         <activity
-            android:name=".user.ui.home.main.UserHomeScreen"
+            android:name="com.example.carapp.user.ui.home.main.UserHomeScreen"
             android:windowSoftInputMode="adjustPan"
             android:screenOrientation="userPortrait"
             />
-        <activity android:name=".user.ui.productDetails.ProductDetailsScreen"></activity>
+        <activity android:name="com.example.carapp.user.ui.productDetails.ProductDetailsScreen"></activity>
         <activity
-            android:name=".user.ui.login.signup.UserSignUpScreen"
+            android:name="com.example.carapp.user.ui.login.signup.UserSignUpScreen"
             android:screenOrientation="userPortrait"
             android:windowSoftInputMode="stateVisible|stateAlwaysHidden|adjustResize" />
         <activity
-            android:name=".user.ui.login.signin.UserSignInScreen"
+            android:name="com.example.carapp.user.ui.login.signin.UserSignInScreen"
             android:screenOrientation="userPortrait"
             android:windowSoftInputMode="stateVisible|stateAlwaysHidden|adjustResize" />
         <activity
-            android:name=".shop.ui.setting.SettingScreen"
+            android:name="com.example.carapp.shop.ui.setting.SettingScreen"
             android:screenOrientation="userPortrait"
             android:windowSoftInputMode="stateVisible|stateAlwaysHidden|adjustResize" />
         <activity
-            android:name=".shop.ui.products.edit.EditProductScreen"
+            android:name="com.example.carapp.shop.ui.products.edit.EditProductScreen"
             android:screenOrientation="userPortrait"
             android:windowSoftInputMode="stateVisible|stateAlwaysHidden|adjustResize" />
         <activity
-            android:name=".shop.ui.products.add.AddProductScreen"
+            android:name="com.example.carapp.shop.ui.products.add.AddProductScreen"
             android:screenOrientation="userPortrait"
             android:windowSoftInputMode="stateVisible|stateAlwaysHidden|adjustResize" />
         <activity
-            android:name=".shop.ui.products.list.ProductsListScreen"
+            android:name="com.example.carapp.shop.ui.products.list.ProductsListScreen"
             android:screenOrientation="userPortrait"
             android:windowSoftInputMode="stateAlwaysHidden" />
         <activity
-            android:name=".shop.ui.login.signUp.ShopSignUpScreen"
+            android:name="com.example.carapp.shop.ui.login.signUp.ShopSignUpScreen"
             android:screenOrientation="userPortrait"
             android:windowSoftInputMode="stateVisible|stateAlwaysHidden|adjustResize" />
         <activity
-            android:name=".shop.ui.login.signIn.ShopSignInScreen"
+            android:name="com.example.carapp.shop.ui.login.signIn.ShopSignInScreen"
             android:screenOrientation="userPortrait"
             android:windowSoftInputMode="stateVisible|stateAlwaysHidden|adjustResize"
             tools:ignore="InnerclassSeparator" />
         <activity
-            android:name=".start.StartScreen"
+            android:name="com.example.carapp.start.StartScreen"
             android:screenOrientation="userPortrait"
             android:windowSoftInputMode="stateAlwaysHidden" />
         <activity
-            android:name=".shop.ui.home.ShopHomeScreen"
+            android:name="com.example.carapp.shop.ui.home.ShopHomeScreen"
             android:screenOrientation="userPortrait"
             android:windowSoftInputMode="stateAlwaysHidden" />
         <activity
-            android:name=".splash.SplashScreen"
+            android:name="com.example.carapp.splash.SplashScreen"
             android:screenOrientation="userPortrait"
             android:windowSoftInputMode="stateAlwaysHidden">
             <intent-filter>

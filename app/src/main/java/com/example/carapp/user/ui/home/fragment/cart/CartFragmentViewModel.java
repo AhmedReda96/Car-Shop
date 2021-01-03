@@ -11,7 +11,6 @@ import androidx.lifecycle.ViewModel;
 import com.example.carapp.db.CartEntity;
 import com.example.carapp.db.MainDataBase;
 import com.example.carapp.db.ProductDao;
-import com.example.carapp.db.ProductEntity;
 
 import java.util.List;
 

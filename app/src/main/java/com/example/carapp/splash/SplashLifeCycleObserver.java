@@ -10,8 +10,6 @@ import androidx.lifecycle.LifecycleObserver;
 import androidx.lifecycle.OnLifecycleEvent;
 
 import com.example.carapp.Sessions.sp.TestLogin;
-import com.example.carapp.db.MainDataBase;
-import com.example.carapp.db.ProductDao;
 import com.example.carapp.shop.ui.home.ShopHomeScreen;
 import com.example.carapp.start.StartScreen;
 import com.example.carapp.user.ui.home.main.UserHomeScreen;

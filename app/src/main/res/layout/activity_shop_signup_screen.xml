@@ -11,7 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@drawable/background"
-        tools:context=".shop.ui.login.signUp.ShopSignUpScreen">
+        tools:context="com.example.carapp.group.alpha.carapp.shop.ui.login.signUp.ShopSignUpScreen">
 
         <androidx.core.widget.NestedScrollView
             android:layout_width="match_parent"
